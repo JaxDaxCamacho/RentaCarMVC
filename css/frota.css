@@ -1,0 +1,56 @@
+#tabela{
+    margin-top:5em;
+}
+#frotabela{
+    border: 1px solid black;
+}
+#frotabela #header td{
+    font-weight: bold;
+    text-align: center;
+    background-color: lightgrey;
+}
+
+#frotabela td{
+    text-align: center;
+    width: 80vw;
+    border: 1px solid black;
+    padding: 0.1em;
+}
+
+#login{
+    margin:auto;
+    margin-top:5em;
+}
+
+#Title{
+    padding:3em;
+    margin-top:3em;
+    background-color:lightgrey;
+
+}
+
+#editarcarro{
+    width:60vw;
+    margin:5em;
+}
+
+#formcreate{
+    padding:0.2em;
+    text-align: center;
+    width:60vw;
+    margin:5em;
+}
+
+#emailform{
+    margin:5em;
+    width:70vw;
+    align-items: center;
+    text-align: center;
+
+    padding:0.2em;
+}
+
+#userprofile{
+    margin:5em;
+    
+}
