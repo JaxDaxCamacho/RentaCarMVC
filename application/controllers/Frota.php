@@ -170,4 +170,16 @@ public function search($cage=0)
             $this->load->view('templates/footer');
         }
     }
+
+    function search_fields(){
+            if (isset($_GET['search'])) {
+                $result = $this->frota_model->search_field($_GET['search']);
+                if (count($result) > 0) {
+                foreach ($result as $row)
+                    $arr_result[] = $row->blog_title;
+                    echo json_encode($arr_result);
+                }
+            }
+        }
+     
 }

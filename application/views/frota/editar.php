@@ -33,8 +33,6 @@ echo '&nbsp&nbsp<label>Matricula do Carro:</label>';
 echo form_input($matricula);
 echo form_input($submit);
 echo form_close();
-
-var_dump($carro);
 ?>
 
 

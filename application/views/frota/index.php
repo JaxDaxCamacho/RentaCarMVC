@@ -1,16 +1,41 @@
 
 <div class="container" id="tabela">
 <h2>Frota de Veiculos</h2>
+<script type="text/javascript">
+$(function() {                     
+    $( "#searching" ).autocomplete({ //the recipient text field with id #username
+        source: function( request, response ) {
+            $.ajax({
+                url: "http://localhost/mysite/index.php/my_controller/search_username",
+                dataType: "json",
+                data: request,
+                success: function(data){
+                    if(data.response == 'true') {
+                       response(data.message);
+                    }
+                }
+            });
+        },
+        minLength: 1,
+        select: function( event, ui ) {
+            //Do something extra on select... Perhaps add user id to hidden input    
+        },
+
+    });
+}); 
+</script>
 <?php
 
 
 echo form_open('search');
-$search= array('name'=>'search','id'=>'search’','value'=>'','class'=>'form-control col-md-4');
+$search= array('name'=>'search','id'=>'searching','value'=>'','class'=>'form-control col-md-4', 'autocomplete'=>'off');
 $input= array('name'=>'submit','value'=>'submit','type'=>'submit','class'=>'btn btn-outline-success my-2 my-sm-0');
 echo form_input($search);
 echo form_input($input);
+
 echo form_close();
 ?>
+<ul id="auto"> </ul>
 
 
 <table id="frotabela">
@@ -37,6 +62,6 @@ echo form_close();
          </tr>';
 }
 ?>
-</table>
+</table> 
 <p><?php 
 echo $links; ?></p>

@@ -57,11 +57,15 @@ $route['adicionar'] = 'frota/create';
 $route['editar/(:any)'] = 'frota/editar/$1';
 $route['editar/editado/(:any)'] = 'frota/editado/$1';
 $route['remover/(:any)'] = 'frota/delete/$1';
+$route['frota/remover/(:any)'] = 'frota/delete/$1';
+$route['autocomplete'] = 'frota/search_fields';
+
 $route['signin'] = 'Login/index';
 $route['Login'] = 'Login/logging';
 $route['mail'] = 'Login/mail';
 $route['profile'] = 'Login/profile';
 $route['logout'] = 'Login/logout';
+
 $route['(:any)'] = 'Pages/view/$1';
 $route['default_controller'] = 'Pages/view';
 

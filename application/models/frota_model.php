@@ -121,5 +121,21 @@ class frota_model extends CI_Model {
                 return(array($modelo,$cor));
         }
 
+        function search_field($search_term){
+
+                $this->db->limit(10);
+                $this->db->distinct();
+                $this->db->select('cor.nome "cor",modelo.nome "modelo"');
+                $this->db->from('automovel');
+                $this->db->join('modelo', 'modelo.id = automovel.modelo_id');
+                $this->db->join('cor', 'cor.id = automovel.cor_id');
+                $this->db->like('cor.nome',$search_term);
+                $this->db->or_like('cor.nome',$search_term);
+                $result= $this->db->get();
+                return $result->result();
+        }
+
+        
+
 
 }
